@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "User - Index - Our Pizzas";
+}
+
+<div class="d-flex justify-content-center flex-column text-center __pizza-index">
+    <h1 class="display-4">These are our pizzas</h1>
+    @model List<la_mia_pizzeria_static.Models.Pizza>
+
+    <div class="d-flex justify-content-center  p-3 __pizza-container">
+        @foreach (var pizza in Model)
+        {
+            <div class="d-flex flex-column __pizza-card">
+
+                <h3>@pizza.Name</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Pizza-3007395.jpg/440px-Pizza-3007395.jpg" alt="https://via.placeholder.com/150?text=Pizza">
+
+                <p>Description: @pizza.Description</p>
+                <p>Price: @pizza.Price</p>
+
+            </div>
+        }
+
+    </div>
+</div>
