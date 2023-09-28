@@ -105,7 +105,7 @@ Stampare dentro uno span il risultato.
                 b. che giorno della settimana è oggi (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
                 c. che giorno della settimana sarà nello stesso giorno e mese di oggi ma tra un anno (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
             </p>
-            <div>a. <span>@actualTime.AddDays(-7)</span></div>
+            <div>a. <span>@actualTime.AddDays(-7).ToString("yyyy-MM-dd")</span></div>
             <div>b. <span>@actualTime.DayOfWeek</span></div>
             <div>c. <span>@actualTime.AddMonths(12).DayOfWeek</span></div>
 
