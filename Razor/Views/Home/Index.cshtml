@@ -1,17 +1,62 @@
 ﻿@{
     ViewData["Title"] = "Razor Exercise";
+    // 1
     string name = "Francesco";
     string surname = "Cauzzi";
-
+    // 2
     string PrintSum1toN(int n){
         int sum = 0;
         for(int i= 0; i <= n; i++){
             sum += i;
         }
         return sum.ToString();
+    }
+    // 3
+    string sentence = "nel mezzo del cammin di nostra vita";
+    int GetCharOccurencesInASentence(string sentence, char a){
+        string[] sentenceArr = sentence.Split(' ');
+        char[][] charArray = new char[sentenceArr.Length][];
+        for (int i = 0; i < sentenceArr.Length; i++)
+        {
+            charArray[i] = sentenceArr[i].ToCharArray();
+        }
 
+        int counter = 0;
+        for (int i = 0; i < charArray.Length; i++)
+        {
+            for (int j = 0; j < charArray[i].Length; j++)
+            {
+                if (charArray[i][j] == a)
+                {
+                    counter++;
+                }
+            }
+        }
+        return counter;
+    }
+    // 4
+    string GetRandomNumbersList(int quantityToShow,int start, int end, int showStart, int showEnd){
+        List<int> listNumber = new();
+        for(int i = 1 ; i <= quantityToShow; i++){
+            Random random = new();
+            int newNumber = random.Next(start, end+1);
+            listNumber.Add(newNumber);
+        }
+        string myStr = "";
+        foreach(int num in listNumber){
+            if(num >= 20 & num <= 70){
+                myStr += $"{num} ";
+                
+            }
+        }
+        return myStr;
 
     }
+    
+
+    
+
+
 }
 
 <div class="text-center">
@@ -32,7 +77,20 @@ Stampare il nostro nome e cognome all'interno di un tag h2.
                 2. Creare una funzione che stampa la somma dei numeri che vanno da 1 a n (con n passato come parametro - n incluso)
 Stampare dentro uno span il risultato.
             </p>
-            <span>@PrintSum1toN(4)</span>
+            <span>@PrintSum1toN(8)</span>
+        </div>
+        <div id="__3">
+            <p>
+                3. Contare quante volte la lettera a è presente nalla frase "nel mezzo del cammin di nostra vita" e stampare questo valore in pagina
+            </p>
+            <span>@GetCharOccurencesInASentence(sentence, 'a')</span>
+
+        </div>
+        <div id="__4">
+            <p>
+                4. Creare una List<int> di 20 numeri interi (generati random da 1 a 90, 1 e 90 inclusi) e mostrare in pagina solo i numeri compresi tra 20 e 70
+            </p>
+            <span>@GetRandomNumbersList(20,1,90,20,70)</span>
         </div>
     </div>
 
