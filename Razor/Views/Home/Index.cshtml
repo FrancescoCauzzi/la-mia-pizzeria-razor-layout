@@ -1,8 +1,41 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Razor Exercise";
+    string name = "Francesco";
+    string surname = "Cauzzi";
+
+    string PrintSum1toN(int n){
+        int sum = 0;
+        for(int i= 0; i <= n; i++){
+            sum += i;
+        }
+        return sum.ToString();
+
+
+    }
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Razor Exercise</h1>
+    <h3>Welcome to my exercises</h3>
+    <div class="__exercises">
+        <div id="__1">
+            <p>
+                1. Dichiarare una variabile valorizzandola con il nostro nome.
+Dichiarare un'altra variabile valorizzandola con il nostro cognome.
+Stampare il nostro nome e cognome all'interno di un tag h2.
+
+            </p>
+            <h2>@name @surname</h2>
+        </div>
+        <div id="__2">
+            <p>
+                2. Creare una funzione che stampa la somma dei numeri che vanno da 1 a n (con n passato come parametro - n incluso)
+Stampare dentro uno span il risultato.
+            </p>
+            <span>@PrintSum1toN(4)</span>
+        </div>
+    </div>
+
 </div>
+
+
