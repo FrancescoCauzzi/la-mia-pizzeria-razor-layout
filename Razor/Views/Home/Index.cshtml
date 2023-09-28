@@ -50,8 +50,9 @@
             }
         }
         return myStr;
-
     }
+    // 5
+    DateTime actualTime = DateTime.Now;
     
 
     
@@ -61,14 +62,13 @@
 
 <div class="text-center">
     <h1 class="display-4">Razor Exercise</h1>
-    <h3>Welcome to my exercises</h3>
+    <h3 class="mb-4">Welcome to my exercises</h3>
     <div class="__exercises">
         <div id="__1">
             <p>
                 1. Dichiarare una variabile valorizzandola con il nostro nome.
 Dichiarare un'altra variabile valorizzandola con il nostro cognome.
 Stampare il nostro nome e cognome all'interno di un tag h2.
-
             </p>
             <h2>@name @surname</h2>
         </div>
@@ -91,6 +91,25 @@ Stampare dentro uno span il risultato.
                 4. Creare una List<int> di 20 numeri interi (generati random da 1 a 90, 1 e 90 inclusi) e mostrare in pagina solo i numeri compresi tra 20 e 70
             </p>
             <span>@GetRandomNumbersList(20,1,90,20,70)</span>
+        </div>
+        <div id="__5">
+            <p>
+                5. Stampare in pagina la data e l'ora attuale (usando la classe DateTime) con il formato anno-mese-giorno ore:minuti:secondi
+            </p>
+            <span>@actualTime.ToString("yyyy-MM-dd HH:mm:ss");</span>
+        </div>
+        <div id="__6">
+            <p>                
+                6. Partendo dalla data di oggi (usando la classe DateTime) stampare in pagina
+                a. la data di 7 giorni fa
+                b. che giorno della settimana è oggi (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
+                c. che giorno della settimana sarà nello stesso giorno e mese di oggi ma tra un anno (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
+            </p>
+            <div>a. <span>@actualTime.AddDays(-7)</span></div>
+            <div>b. <span>@actualTime.DayOfWeek</span></div>
+            <div>c. <span>@actualTime.AddMonths(12).DayOfWeek</span></div>
+
+
         </div>
     </div>
 
